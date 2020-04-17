@@ -22,6 +22,7 @@ class TestGetAssertion(object):
         assert GARes.number_of_credentials == None
 
     def test_empty_allowList(self, device):
+        device.reset()
         with pytest.raises(CtapError) as e:
             device.sendGA(*FidoRequest(allow_list=[]).toGA())
         assert e.value.code == CtapError.ERR.NO_CREDENTIALS
