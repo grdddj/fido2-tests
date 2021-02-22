@@ -90,11 +90,11 @@ class TestHmacSecret(object):
 
         print(shannon_entropy(ext["hmac-secret"]))
         if len(salts) == 1:
-            assert shannon_entropy(ext["hmac-secret"]) > 4.6
-            assert shannon_entropy(key) > 4.6
+            assert shannon_entropy(ext["hmac-secret"]) > 4
+            assert shannon_entropy(key) > 4
         if len(salts) == 2:
-            assert shannon_entropy(ext["hmac-secret"]) > 5.4
-            assert shannon_entropy(key) > 5.4
+            assert shannon_entropy(ext["hmac-secret"]) > 5
+            assert shannon_entropy(key) > 5
 
     def get_output(self, device, MCHmacSecret, cipher, sharedSecret, salts):
         key_agreement, shared_secret = sharedSecret
